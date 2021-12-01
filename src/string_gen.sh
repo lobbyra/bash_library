@@ -9,20 +9,20 @@
 #                                             #
 ###############################################
 
-##################################################################################
-# Bash snippet that generate a alphanum + OWASP chars passwd with a custom length.
+#####################################################################
+# Bash snippet that generate an alphanum string with a custom length.
 # Credit to : https://unix.stackexchange.com/a/230676
 #
-# USAGE : passwd_gen [length of wanted passwd]
-##################################################################################
+# USAGE : passwd_gen [length of wanted string]
+#####################################################################
 
-function passwd_gen () {
+function string_gen () {
     if [[ ! $# -eq 1 ]] ; then
-        echo 'passwd_gen need an argument'
+        echo 'string_gen need an argument'
         exit 1
     fi
-    tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' < /dev/urandom | head -c $1 ; echo
+    tr -dc A-Za-z0-9 < /dev/urandom | head -c $1 ; echo ''
 }
 
 # Uncomment this to test with bash
-# passwd_gen $1
+# string_gen $1
