@@ -55,4 +55,4 @@ function print_color_echo () {
     print_color $1 $2 $3
 }
 
-print_color_echo $1 $2 $3
+# print_color_echo $1 $2 $3
