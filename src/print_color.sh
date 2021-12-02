@@ -52,7 +52,11 @@ function print_color () {
 
 function print_color_echo () {
     PC_printer="echo -e"
-    print_color $1 $2 $3
+    if [[ ! $# -eq 2 ]] && [[ ! $# -eq 3 ]] ; then       # Arg number protection
+        echo 'USAGE print_color [color] [your string] (type)'
+        exit 1
+    fi
+    print_color $1 "$2" $3
 }
 
-# print_color_echo $1 $2 $3
+# print_color_echo $1 "$2" $3
